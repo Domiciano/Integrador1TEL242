@@ -1,6 +1,5 @@
 <img width="256" src="https://www.icesi.edu.co/launiversidad/images/La_universidad/logo_icesi.png">
 
-https://4592-200-3-193-228.ngrok-free.app
 
 # Proyecto Integrador 1
 Este es el repositorio del curso. Ejemplos de código, acceso a videos, etc. serán accesibles desde aquí.
