@@ -8,12 +8,9 @@ Este es el repositorio del curso. Ejemplos de código, acceso a videos, etc. ser
 
 # Planeador
 
-<a href="https://docs.google.com/spreadsheets/d/1a1aBU54QwW8XBjM-VW-ZW_pWia9nEnEH/edit?usp=sharing&ouid=117897710133227559254&rtpof=true&sd=true"><small>Planeador de Proyecto Integrador 1</small></a>
+<a href=""><small>Planeador de Proyecto Integrador 1</small></a>
 
 # Grupo de Whatsapp
-
-
-
 
 <table style="border-collapse: collapse; border: none;" border="0">
   <tr>
@@ -23,7 +20,7 @@ Este es el repositorio del curso. Ejemplos de código, acceso a videos, etc. ser
       </a>
     </td>
     <td style="vertical-align: middle;">
-      <a href="https://chat.whatsapp.com/L7K2iFExtxyE93MxEbq552">Grupo de Whatsapp</a>
+      <a href="https://chat.whatsapp.com/BB96owfvYzSLqTZJ0KtkhV">Grupo de Whatsapp</a>
     </td>
   </tr>
 </table>
