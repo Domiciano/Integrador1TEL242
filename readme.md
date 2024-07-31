@@ -1,34 +1,30 @@
 <img width="256" src="https://www.icesi.edu.co/launiversidad/images/La_universidad/logo_icesi.png">
 
-https://4592-200-3-193-228.ngrok-free.app
 
 # Proyecto Integrador 1
 Este es el repositorio del curso. Ejemplos de código, acceso a videos, etc. serán accesibles desde aquí.
 
 
-
-# Informe final
-
-Realice un informe en el que adjunte como capítulos los elementos de diseño que ha presentado a lo largo del semestre: Introducción, Referencias, Problema, Justificación, Requerimientos, el diagrama de diseño de la base de datos, diseño de bloques SysML y el product backlog. Los anteriores puntos puede dejarlos inalterados. <b>EVITE INCLUIR EN ESTE ESCRITO LINKS, TODO DEBERÍA ESTAR CONTENIDO EN EL TRABAJO</b>
-
-Adicionalmente adjunte un capitulo llamado "Marco conceptual y técnico" donde liste todos los conceptos técnicos y tecnológicos que necesitaron para realizar el proyecto integrador. Cada item de esta lista debe tener una descripción donde se argumente por qué es necesario para el proyecto. Categorice los elementos de esta lista de acuerdo a si es parte de front, back, base de datos, hardware o protocolos de comunicación.
-
-
-
-
 # Planeador
 
-<a href="https://docs.google.com/spreadsheets/d/1a1aBU54QwW8XBjM-VW-ZW_pWia9nEnEH/edit?usp=sharing&ouid=117897710133227559254&rtpof=true&sd=true"><small>Planeador de Proyecto Integrador 1</small></a>
+<a href=""><small>Planeador de Proyecto Integrador 1</small></a>
 
 # Grupo de Whatsapp
-<a href="https://chat.whatsapp.com/L7K2iFExtxyE93MxEbq552"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" width="128"></a><br>
 
-<a href="https://chat.whatsapp.com/L7K2iFExtxyE93MxEbq552">Grupo de Whatsapp</a>
+<table style="border-collapse: collapse; border: none;" border="0">
+  <tr>
+    <td>
+      <a href="https://miro.com/app/board/o9J_l2waJG0=">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" width="128">
+      </a>
+    </td>
+    <td style="vertical-align: middle;">
+      <a href="https://chat.whatsapp.com/BB96owfvYzSLqTZJ0KtkhV">Grupo de Whatsapp</a>
+    </td>
+  </tr>
+</table>
 
 
-# Elementos de referencia
-
-<a href="https://miro.com/app/board/o9J_l23kC64=/?share_link_id=159122822699"><img width="128" src="https://store-images.s-microsoft.com/image/apps.59334.13959754522315136.c4ea2415-8e3c-42bf-8f77-e885eb7c11a1.be6eacf3-e0b4-4478-9abc-47192806c1b5?mode=scale&q=90&h=300&w=300"></a><br>
 
 
 # Comando básicos de git
