@@ -7,7 +7,7 @@ Este es el repositorio del curso. Ejemplos de código, acceso a videos, etc. ser
 
 # Planeador
 
-<a href=""><small>Planeador de Proyecto Integrador 1</small></a>
+<a href="https://docs.google.com/spreadsheets/d/1feE3kOQm7wpqfM3v6dFeca1pdTfPyf7G/edit?usp=sharing&ouid=117897710133227559254&rtpof=true&sd=true"><small>Planeador de Proyecto Integrador 1</small></a>
 
 # Grupo de Whatsapp
 
