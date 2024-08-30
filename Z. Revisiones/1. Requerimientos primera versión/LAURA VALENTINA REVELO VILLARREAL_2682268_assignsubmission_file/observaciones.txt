@@ -1,0 +1,16 @@
+Requerimientos 
+
+R2
+Dicen de una vez el estado en el que termina la medición, pero no hay un requerimiento asociado a cuándo comienza.
+No es necesario que mencionen tecnologías, en este caso JSON.
+
+En los requerimientos hace falta quién puede acceder al sistema, quién puede tomar las medidas.
+
+Adicionalmente hace falta el tema de pacientes. ¿Cómo se registra un paciente?
+
+Falta establecer el acceso al sistema. Quién puede ingresar, quién puede tomar las medidas, quién las puede administrar y quién puede ver los resultados.
+
+Se requiere modularizar los requerimientos. Es decir, su visión del sistema es muy holística. Deben pensar en las diferentes partes o módulos del sistema.
+
+En general son requerimientos adecuados, pero muy escuetos. Falta profundizar y para esto se requiere identificar módulos y ubicar cada requerimiento en las categorías.
+

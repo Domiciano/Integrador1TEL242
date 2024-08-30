@@ -1,0 +1,25 @@
+Requerimientos
+
+"Medir automáticamente..."
+La palabra automáticamente implica un desarrollo que va más allá. Yo lo dejaría en que el sistema debe medir zapateo y taconeo
+
+"Las mediciones deben incluir aspectos motores y no motores"
+No, las mediciones deben incluir los datos motores únicamente
+
+"Transporte de datos..."
+Se puede adicionar al anterior requerimiento. No es necesario que mencionen la tecnología, en este caso JSON.
+
+"Proveer retroalimentación..."
+Es un requerimiento muy ambiguo y general
+
+"La interfaz debe ser intuitiva..."
+Es un requerimiento NO funcional.
+
+
+En general, es un ejercicio que no cumple de momento con la elicitación de unos requerimientos completos y específicos. 
+
+Les aconsejo hacer un recorrido pensando en un hipotético sistema ya construido y pasar por todos los usos.
+Hacer una linea de tiempo pasando por todas las acciones que pueden hacer los involucrados: pacientes y médicos. 
+
+En cada acción se pueden establecer una serie de requerimientos.
+

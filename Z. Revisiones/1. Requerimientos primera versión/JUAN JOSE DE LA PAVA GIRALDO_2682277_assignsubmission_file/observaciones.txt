@@ -1,0 +1,42 @@
+Requerimientos
+
+Los requerimientos generales están bien, falta la visualización de datos. "Presentar la información de los muestreos realizados" no es suficiente. La visualización de datos tiene que ver con información útil para el médico, que implica un procesamiento previo.
+
+
+"El sistema debe permitir a los médicos buscar pacientes registrados para asociar su información médica con la muestra de la prueba, ya sea de zapateo o taconeo, que se está realizando."
+
+Aquí hay varios requerimientos en uno. Uno es que el médico puede buscar pacientes, otra es asociarlo con la muestra
+
+Dentro de los requerimientos del usuario falta registrar los pacientes. Requerirá algunos datos de él como nombre, cédula y demás. Más abajo esa información la recolectan para la muestra, pero debería haber un registro de paciente previo.
+
+
+
+¿Rol?
+
+"Cuando los datos sean recopilados por las pruebas y enviados al sistema principal, este debe almacenarlos
+en una base de datos relacional."
+No se tiene que especificar que sea relacional de una vez en los requerimientos
+
+"El sistema debe contar con un controlador ESP32 y unos sensores que permitan monitorear la movilidad
+del pie y de la pierna del paciente a través de las pruebas de zapateo y taconeo"
+No es necesario mencionar la tecnología, en este caso ESP32
+
+"Cuando el usuario utilice la aplicación, el sistema debe ser cómodo de usar para que la prueba de Parkinson se realice de manera sencilla."
+Es un requerimiento funcional ambiguo. Cómodo para quién, sencilla en qué sentido.
+
+"El sistema debe ser fácil de usar por personas de todos los tipos y en todas las situaciones sociales y económicas"
+Igual este requerimiento. Definitivamente requerimos que sea intuitivo, pero el requerimiento no suma nada si no se específican las personas posibles que podrían usar el sistema.
+
+
+"Cuando un usuario intente eliminar datos o editar datos, el sistema debe proporcionar un pop-up de
+confirmación."
+Este requerimiento no está asociado al BackEnd porque el pop-up es un elemento del frontend
+
+En general la sección de backend puede eliminarse y acomodarlos en las demás categorías.
+
+Hacen falta requerimientos de acceso al recurso. ¿El sistema dejará ingresar a médicos y pacientes? ¿Sólo a médicos? ¿Cualquier usuario podrá registrar pacientes?
+
+
+En términos generales, veo completitud, especificidad. Pero no tienen indexación y falta la sección de acceso al sistema.
+
+

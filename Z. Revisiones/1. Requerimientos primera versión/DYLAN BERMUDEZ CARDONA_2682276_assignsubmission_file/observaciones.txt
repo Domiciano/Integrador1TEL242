@@ -1,0 +1,20 @@
+Requerimientos
+
+Al momento de establecer los requerimientos se deben definir los roles, sobretodo si se utilizan en en los requerimientos. "Platform Operator" no se definió
+
+El requerimiento 1 es muy general y abarca casi la completitud del proyecto, es un requerimiento que bien se puede romper en trozos. Es porque en la parte final ya establecen la visualización, pero la unidad de procesamiento debería encargarse de transformar los datos crudos en información útil.
+
+Más adelante, se puede establecer que la información útil se puede visualizar.
+
+
+Pilas con el formato, no todos los requerimientos están indexados.
+
+Los requerimientos de administrador remoto, creo que les hace falta el requerimientos de cómo se cambia entre los diferentes estados: cuando está encendido y cuando está recolectando datos. El término "en funcionamiento" puede ser ambiguo.
+
+En sus requerimientos de login dicen que el paciente se podrá autenticar, ¿seguros?
+
+Si bien sale la característica de que se pueden crear pruebas, no es explicito que el doctor puede crear pacientes y tomar muestras de él.
+
+En términos generales los requerimientos tienen buena completitud y definidos adecuadamente.
+
+
