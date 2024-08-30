@@ -4,10 +4,33 @@
 # Proyecto Integrador 1
 Este es el repositorio del curso. Ejemplos de código, acceso a videos, etc. serán accesibles desde aquí.
 
+# Entrega 1
+
+
+## 1. Introducción
+Una buena introducción debe poder contextualizar al lector sobre el trabajo. En qué entorno nace el proyecto, posibles antecedentes y por qué el proyecto es una necesidad y en qué ayudaría a satisfacer esta necesidad, cómo se toman actualmente los datos y cómo un proyecto desplegado en la red contribuye al problema. Puede usar imágenes o ilustraciones que permitan al lector conocer el proyecto. Debe hacer de cuenta que el lector no tiene la menor idea del proyecto. 
+
+
+
+## 2. Problema de ingeniería
+Debe poder describir el problema. ¿Cuál es el problema que se está solucionando?. Para esto primera haga una análisis causa-raíz y use un gráfico de arbol de problema donde las causas identificadas son las raíces del arbol, el problema es el tronco y las consecuencias son las hojas.
+
+## 3. Justificación
+Luego de analizar el problema, justifique por qué el uso de la tecnología y las comunicaciones soluciona el problema que han planteado.
+
+## 4. Referencias
+En la introducción incluya al menos <b>4 referencias</b>, puede ubicarlas en la introducción o en la justificación. Recuerde que una referencia puede dar fuerza a un argumento o evoca el <b>estado del arte</b> de un área de trabajo específico.
+
+
+# Entrega 2
+
+## 5. Requerimientos
+Elicite los requerimientos siguiendo estrictamente el EARS Pattern (https://alistairmavin.com/ears/)
+
 
 # Planeador
 
-<a href=""><small>Planeador de Proyecto Integrador 1</small></a>
+<a href="https://docs.google.com/spreadsheets/d/1feE3kOQm7wpqfM3v6dFeca1pdTfPyf7G/edit?usp=sharing&ouid=117897710133227559254&rtpof=true&sd=true"><small>Planeador de Proyecto Integrador 1</small></a>
 
 # Grupo de Whatsapp
 
