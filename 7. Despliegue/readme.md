@@ -18,7 +18,7 @@ FROM amazoncorretto:22-jdk
 WORKDIR /app
 
 # Copia el archivo JAR del backend al directorio de trabajo
-COPY ./target/Banner.jar /app/backend.jar
+COPY ./target/artifact.jar /app/backend.jar
 
 # Expone el puerto en el que se ejecutará el backend (ajusta el número de puerto según tus necesidades)
 EXPOSE 8080
