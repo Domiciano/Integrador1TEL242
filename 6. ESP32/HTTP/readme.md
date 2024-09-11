@@ -222,7 +222,7 @@ object["key2"] = jsonArray;
 
 ### Creación de clases y objetos en c++
 La cabecera de la clase es
-```
+```c++
 #ifndef ACELEROMETRO_H
 #define ACELEROMETRO_H
 #include <Arduino.h>
@@ -251,7 +251,7 @@ public:
 #endif 
 ```
 La implementación de la clase es
-```
+```c++
 #include <Arduino.h>
 #include "Acelerometro.h"
 #include <Arduino_JSON.h>
@@ -303,7 +303,7 @@ String Acelerometro::toJSON() const {
 }
 ```
 Y para usar el objeto en cualquier contexto
-```
+```c++
 #include <Acelerometro.h>
 ...
 Acelerometro acelerometro(1.0, 2.0, 3.0);
