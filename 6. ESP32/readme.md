@@ -1,6 +1,6 @@
-# Getting started arduino ESP32
+# Getting started con arduino ESP32
 
-
+## Arduino IDE
 Siga esta guía para instalar ESP32 en su arduino
 ```
 https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/
@@ -29,6 +29,21 @@ esp32 by Espressif Systems
 Después de eso, ya puede seleccionar su ESP32 en el menú de boards. <br><br>
 
 Tools > Boards > esp32 > ESP32-WROOM-DA Module
+
+## PlatformIO
+Estos pasos son para usar PlatformIO sobre Visal Studio Code
+<ol>
+  <li>En visual studio vaya a extensiones y busque PlatformIO</li>
+  <li>Escoja la extensión con ícono de insecto naranha, de platformio.org</li>
+  <li>Al instalarla, en el menú de la izquierda aparecerá el insecto, de click allí</li>
+  <li>En la sección Quick Access, escoja la opción Open</li>
+  <li>De click en la opción de + New Project</li>
+  <li>Escoja un nombre cualquiera</li>
+  <li>Escoja la board Espressif ESP32 Dev Module</li>
+  <li>Escoja Arduino como Framework</li>
+  <li>En location, escoga un directorio de archivo que no tenga ni espacios, ni caractéres NO ASCII. Por ejemplo C:/Users/Andrés Londoño/Projects no es un directorio válido</li>
+  <li>Espere mientras PlatformIO carga los módulos</li>
+</ol>
 
 ## Verifique puertos
 Entre en esta página y verifique dónde se encuentra sus elementos<br>
