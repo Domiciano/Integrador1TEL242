@@ -1,5 +1,6 @@
 ## GET Request
-```
+```c++
+#include <Arduino.h>
 #include <WiFi.h>
 #include <HTTPClient.h>
 
@@ -50,7 +51,8 @@ void initWiFi() {
 
 ## POST Request
 
-```
+```c++
+#include <Arduino.h>
 #include <WiFi.h>
 #include <HTTPClient.h>
 
@@ -105,7 +107,8 @@ void initWiFi() {
 ```
 ## Decodificación JSON
 
-```
+```c++
+#include <Arduino.h>
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <Arduino_JSON.h>
