@@ -1,13 +1,9 @@
 ## Conexión a MQTT Server SIN SSL
-wss://i2thub.icesi.edu.co:5443/giscel/ws
-https://randomnerdtutorials.com/esp32-mqtt-publish-subscribe-arduino-ide/
 
-
-
-PubSubClient by Nick O'Leary
+Para usar este código necesitará PubSubClient de Nick O'Leary
 https://github.com/knolleary/pubsubclient
 
-```
+```c++
 #include <WiFi.h>
 #include <PubSubClient.h>
 
@@ -28,6 +24,35 @@ WiFiClient wifiClient;
 
 // Objeto PubSubClient
 PubSubClient mqttClient(wifiClient);
+
+void callback(char* topic, byte* payload, unsigned int length) {
+  // Imprime el mensaje recibido
+  Serial.print("Mensaje recibido en el topic ");
+  Serial.print(topic);
+  Serial.print(": ");
+  for (int i = 0; i < length; i++) {
+    Serial.print((char)payload[i]);
+  }
+  Serial.println();
+}
+
+void keepAlive(){
+  if (!mqttClient.connected()) {
+    Serial.println("Reconectando");
+    // Intenta conectarse al servidor MQTT
+    while (!mqttClient.connected()) {
+      Serial.println("Intentando conectar al servidor MQTT...");
+      if (mqttClient.connect(clientName)) {
+        Serial.println("Conectado al servidor MQTT!");
+      } else {
+        Serial.print("Error al conectar: ");
+        Serial.println(mqttClient.state());
+        delay(5000);
+      }
+    }
+    mqttClient.subscribe(topic);
+  }
+}
 
 void setup() {
   // Inicializa la comunicación serial
@@ -60,41 +85,15 @@ void setup() {
   mqttClient.subscribe(topic);
 }
 
-void callback(char* topic, byte* payload, unsigned int length) {
-  // Imprime el mensaje recibido
-  Serial.print("Mensaje recibido en el topic ");
-  Serial.print(topic);
-  Serial.print(": ");
-  for (int i = 0; i < length; i++) {
-    Serial.print((char)payload[i]);
-  }
-  Serial.println();
-}
+
 
 void loop() {
   // Procesa los mensajes del servidor MQTT
   mqttClient.loop();
   keepAlive();
-  
 }
 
-void keepAlive(){
-  if (!mqttClient.connected()) {
-    Serial.println("Reconectando");
-    // Intenta conectarse al servidor MQTT
-    while (!mqttClient.connected()) {
-      Serial.println("Intentando conectar al servidor MQTT...");
-      if (mqttClient.connect(clientName)) {
-        Serial.println("Conectado al servidor MQTT!");
-      } else {
-        Serial.print("Error al conectar: ");
-        Serial.println(mqttClient.state());
-        delay(5000);
-      }
-    }
-    mqttClient.subscribe(topic);
-  }
-}
+
 
 void serialEvent() {
   if (Serial.available() > 0) {
