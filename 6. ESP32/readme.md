@@ -73,6 +73,13 @@ void serialEvent() {
   }
 }
 ```
+## Configuración inicial
+Debe definir la tasa de baudios de la transmisión
+```ini
+...
+monitor_speed = 115200
+...
+```
 
 # Referencias
 <ol>
