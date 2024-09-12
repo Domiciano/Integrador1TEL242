@@ -1,6 +1,6 @@
 # Red de acceso en laboratorio
 
-```
+```c++
 const char* ssid = "LABREDES";
 const char* password = "F0rmul4-1";
 ```
@@ -47,7 +47,7 @@ void initWiFi() {
 ## Scanner de redes
 Programe esto en el ESP32 para reconocer las redes a su alrededor
 
-```
+```c++
 #include <Arduino.h>
 #include <WiFi.h>
 
@@ -93,7 +93,7 @@ void loop() {
 
 # Access point 
 
-```
+```c++
 #include <Arduino.h>
 #include <WiFi.h>
 #include <WiFiAP.h>
