@@ -11,7 +11,8 @@ const char* password = "F0rmul4-1";
 ## Conectarse a una red Wi-fi
 
 Use el siguiente código para conectarse a una red
-```
+```c++
+#include <Arduino.h>
 #include <WiFi.h>
 
 const char* ssid = "SU_SSID";
@@ -47,6 +48,7 @@ void initWiFi() {
 Programe esto en el ESP32 para reconocer las redes a su alrededor
 
 ```
+#include <Arduino.h>
 #include <WiFi.h>
 
 void setup() {
@@ -92,6 +94,7 @@ void loop() {
 # Access point 
 
 ```
+#include <Arduino.h>
 #include <WiFi.h>
 #include <WiFiAP.h>
 
