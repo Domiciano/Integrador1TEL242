@@ -42,10 +42,10 @@ Estos pasos son para usar PlatformIO sobre Visal Studio Code
   <li>Escoja la board Espressif ESP32 Dev Module</li>
   <li>Escoja Arduino como Framework</li>
   <li>En location, escoga un directorio de archivo que no tenga ni espacios, ni caractéres NO ASCII. Por ejemplo C:/Users/Andrés Londoño/Projects no es un directorio válido</li>
-  <li>Espere mientras PlatformIO carga los módulos</li>
+  <li>Espere mientras PlatformIO carga los módulos, la primera vez se demora</li>
 </ol>
 
-## Verifique puertos
+## Verifique puertos de su board
 Entre en esta página y verifique dónde se encuentra sus elementos<br>
 https://lastminuteengineers.com/esp32-pinout-reference/
 <ol>
@@ -54,16 +54,18 @@ https://lastminuteengineers.com/esp32-pinout-reference/
 </ol>
 
 ## Plantilla
-```
+En el archivo main.cpp puede usar este código de referencia
+```c++
+#include <Arduino.h>
+
 void setup() {
   Serial.begin(115200);
 }
 
 void loop() {
-  int measurement = random(4096);
-  Serial.println(measurement);
-  delay(500);
+  
 }
+
 void serialEvent() {
   if (Serial.available() > 0) {
     String data = Serial.readStringUntil('\n');
