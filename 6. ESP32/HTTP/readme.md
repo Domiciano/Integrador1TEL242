@@ -5,15 +5,28 @@
 #include <HTTPClient.h>
 
 
-const char* ssid = "LABREDES";
-const char* password = "F0rmul4-1";
+const char* ssid = "PUBLICA";
+const char* password = "";
 
 
-String url = "https://facelogprueba.firebaseio.com/integrador.json";
+String url = "https://fakestoreapi.com/products";
 
+
+void initWiFi() {
+  WiFi.begin(ssid, password);
+  Serial.print("Connecting to WiFi ..");
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print('.');
+    delay(1000);
+  }
+  Serial.println("Connected!!");
+  Serial.println(WiFi.localIP());
+  
+}
 
 void setup() {
   Serial.begin(115200);
+  Serial.println("Inicializando");
   WiFi.mode(WIFI_STA);
   initWiFi();
   HTTPClient http;
@@ -35,18 +48,6 @@ void setup() {
 void loop() {
   
 }
-
-void initWiFi() {
-  WiFi.begin(ssid, password);
-  Serial.print("Connecting to WiFi ..");
-  while (WiFi.status() != WL_CONNECTED) {
-    Serial.print('.');
-    delay(1000);
-  }
-  Serial.println("Connected!!");
-  Serial.println(WiFi.localIP());
-  
-}
 ```
 
 ## POST Request
@@ -63,6 +64,17 @@ const char* password = "";
 
 String url = "https://facelogprueba.firebaseio.com/db.json";
 
+void initWiFi() {
+  WiFi.begin(ssid, password);
+  Serial.print("Connecting to WiFi ..");
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print('.');
+    delay(1000);
+  }
+  Serial.println("Connected!!");
+  Serial.println(WiFi.localIP());
+  
+}
 
 void setup() {
   Serial.begin(9600);
@@ -90,18 +102,6 @@ void setup() {
 }
 
 void loop() {
-  
-}
-
-void initWiFi() {
-  WiFi.begin(ssid, password);
-  Serial.print("Connecting to WiFi ..");
-  while (WiFi.status() != WL_CONNECTED) {
-    Serial.print('.');
-    delay(1000);
-  }
-  Serial.println("Connected!!");
-  Serial.println(WiFi.localIP());
   
 }
 ```
