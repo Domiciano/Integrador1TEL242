@@ -13,7 +13,7 @@ String url = "https://facelogprueba.firebaseio.com/integrador.json";
 
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   WiFi.mode(WIFI_STA);
   initWiFi();
   HTTPClient http;
