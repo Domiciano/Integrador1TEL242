@@ -4,6 +4,7 @@ Para usar este código necesitará PubSubClient de Nick O'Leary
 https://github.com/knolleary/pubsubclient
 
 ```c++
+#include <Arduino.h>
 #include <WiFi.h>
 #include <PubSubClient.h>
 
