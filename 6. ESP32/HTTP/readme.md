@@ -13,6 +13,7 @@ String url = "https://fakestoreapi.com/products";
 
 
 void initWiFi() {
+  WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
   Serial.print("Connecting to WiFi ..");
   while (WiFi.status() != WL_CONNECTED) {
@@ -27,7 +28,6 @@ void initWiFi() {
 void setup() {
   Serial.begin(115200);
   Serial.println("Inicializando");
-  WiFi.mode(WIFI_STA);
   initWiFi();
   HTTPClient http;
   http.begin(url.c_str());
@@ -65,6 +65,7 @@ const char* password = "";
 String url = "https://facelogprueba.firebaseio.com/db.json";
 
 void initWiFi() {
+  WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
   Serial.print("Connecting to WiFi ..");
   while (WiFi.status() != WL_CONNECTED) {
@@ -78,7 +79,6 @@ void initWiFi() {
 
 void setup() {
   Serial.begin(9600);
-  WiFi.mode(WIFI_STA);
   initWiFi();
   HTTPClient http;
   http.begin(url.c_str());
