@@ -36,7 +36,6 @@ Agregue a src/main/resources un archivo llamado application.properties
 
 ```
 spring.jpa.hibernate.ddl-auto=update
-spring.datasource.url=jdbc:mysql://200.3.193.22:3306/DATABASE
 spring.datasource.username=USER
 spring.datasource.password=PASS
 spring.datasource.tomcat.max-active=10
@@ -45,11 +44,13 @@ spring.datasource.tomcat.max-active=10
 Para MySQL debe agregar la propiedad
 ```
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/db
 ```
 
 Para Postgres debe agregar
 ```
 spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.url=jdbc:postgresql://localhost:5432/db
 ```
 
 
