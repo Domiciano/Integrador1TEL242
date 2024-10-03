@@ -5,7 +5,6 @@ Guarde el siguiente archivo como docker-compose.yml
 services:
   db:
     platform: linux/x86_64
-    command: ["--max_connections=1000"]
     image: mysql:5.7
     restart: always
     environment:
