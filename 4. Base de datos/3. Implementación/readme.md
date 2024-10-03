@@ -2,6 +2,14 @@
 
 Dependencias necesarias para los datos
 ```
+<!--Conector de MySQL-->
+<dependency>
+   <groupId>mysql</groupId>
+   <artifactId>mysql-connector-java</artifactId>
+   <version>8.0.26</version>
+</dependency>
+
+<!--Conector de Postgres-->
 <dependency>
    <groupId>mysql</groupId>
    <artifactId>mysql-connector-java</artifactId>
