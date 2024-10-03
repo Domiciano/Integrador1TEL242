@@ -11,9 +11,9 @@ Dependencias necesarias para los datos
 
 <!--Conector de Postgres-->
 <dependency>
-   <groupId>mysql</groupId>
-   <artifactId>mysql-connector-java</artifactId>
-   <version>8.0.26</version>
+   <groupId>org.postgresql</groupId>
+   <artifactId>postgresql</artifactId>
+   <version>42.7.4</version>
 </dependency>
 
 <dependency>
