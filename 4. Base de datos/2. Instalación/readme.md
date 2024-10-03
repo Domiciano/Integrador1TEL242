@@ -30,3 +30,27 @@ docker-compose up -d
 ```
 
 Con esto tendrá una base de datos local en 127.0.0.1:3306. Su usuario es user, su password es password y la base de datos se llamará db
+
+# Instalación de Postgres con Docker
+
+```
+services:
+  db:
+    platform: linux/x86_64
+    command: ["--max_connections=1000"]
+    image: postgres:17
+    restart: always
+    environment:
+      POSTGRES_DB: 'db'
+      POSTGRES_USER: 'user'
+      POSTGRES_PASSWORD: 'password'
+    ports:
+      - '5432:5432'
+    expose:
+      - '5432'
+    volumes:
+      - my-db:/var/lib/postgresql/data
+
+volumes:
+  my-db:
+```
