@@ -18,12 +18,4 @@ const response = await fetch(url, {
 });
 const json = await response.json();
 ```
-Donde data es un objeto</br></br>
-
-
-
-
-
-
-
-https://medium.com/@ilyailin7777/how-to-deploy-javascript-app-to-github-pages-4b37b315556f
+Donde data es un objeto
