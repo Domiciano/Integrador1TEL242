@@ -79,26 +79,66 @@ signupBtn.addEventListener('click', (event)=>{
 package com.example.intregradorapi.controller;
 
 import com.example.intregradorapi.entity.User;
+import com.example.intregradorapi.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(maxAge = 3600)
 public class UserController {
 
+    @Autowired
+    private UserRepository userRepository;
+
     @PostMapping("users/create")
     public ResponseEntity<?> createUser(@RequestBody User user) {
+        userRepository.save(user);
         return ResponseEntity.status(200).body(user);
     }
+
+    @GetMapping("users/list")
+    public ResponseEntity<?> listUsers() {
+        var users = userRepository.findAll();
+        return ResponseEntity.status(200).body(users);
+    }
+
+    //users?email=domic.rincon@gmail.com -> Request
+    //users/domic.rincon@gmail.com -> Path Variable
+    @GetMapping("users")
+    public ResponseEntity<?> getUserByEmail(@RequestParam("email") String email){
+        Optional<User> optuser = userRepository.findUserByEmail(email);
+        if(optuser.isPresent()){
+            var user = optuser.get();
+            return ResponseEntity.status(200).body(user);
+        }else{
+            return ResponseEntity.status(404).body("User not found");
+        }
+    }
+
 
 
     //users/list
     //users/delete
     //users/login
 
+}
+```
+Repository
+```
+package com.example.intregradorapi.repository;
+
+import com.example.intregradorapi.entity.User;
+import org.springframework.data.repository.CrudRepository;
+
+import java.util.Optional;
+
+//CRUD para entidad
+//C: create, R: read, U:update, D:delete
+public interface UserRepository extends CrudRepository<User, Long> {
+    Optional<User> findUserByEmail(String email);
 }
 ```
 
