@@ -3,7 +3,7 @@
 ## Instalación de MySQL con Docker
 
 Guarde el siguiente archivo como docker-compose.yml
-```
+```yml
 services:
   db:
     platform: linux/x86_64
@@ -34,7 +34,7 @@ Con esto tendrá una base de datos local en 127.0.0.1:3306. Su usuario es user, 
 
 ## Instalación de Postgres con Docker
 
-```
+```yml
 services:
   db:
     platform: linux/x86_64
@@ -116,7 +116,7 @@ spring.datasource.url=jdbc:postgresql://localhost:5432/<DB>
 # 3. Relaciones de entidades en Springboot
 
 Usted puede especificar una tabla usando
-```
+```java
 import jakarta.persistence.*;
 
 @Entity
@@ -141,7 +141,7 @@ Donde @GeneratedValue(strategy = GenerationType.AUTO) se usa para indicar que la
 # Relación 1 a Muchos
 Suponga que tiene una relación entre las entidades Curso y Profesor. Para configurar la relación usando JPA, las clases se verán así:
 
-```
+```java
 import jakarta.persistence.*;
 
 @Entity
@@ -162,7 +162,7 @@ public class Profesor {
 
 ```
 Note que @OneToMany representa el 1 en el diagrama y @ManyToOne representa el *. Además @OneToMany en mappedBy se especifica el nombre del objeto de la clase relacionada, en @ManyToOne en su propiedad name se especifica el nombre del campo de la tabla donde se aloja la llave foránea
-```
+```java
 import jakarta.persistence.*;
 
 @Entity
@@ -197,7 +197,7 @@ Tenga en cuenta:<br>
 </ol>
 Un controller se ve así:
 
-```
+```java
 @RestController
 public class EchoController {
 
@@ -220,7 +220,7 @@ public class EchoController {
 ## Repository
 En un repository, va el CRUD (Create, Read, Update, Delete) de cada una de las entidades. Por ejemplo si tenemos una entidad User, un repository puede verse así
 
-```
+```java
 public interface UserRepository extends CrudRepository<User, Long> {
 
 }
@@ -240,11 +240,11 @@ public interface UserRepository extends CrudRepository<User, Long> {
 Todas las acciones y consultas se hacen por medio del repositorio.<br><br>
 
 ### Obtener todos los registros de la tabla 
-```
+```java
 repository.findAll()
 ```
 ### Insertar datos
-```
+```java
 repository.save(user)
 ```
 Donde user es una instancia de la entidad User
@@ -252,13 +252,13 @@ Donde user es una instancia de la entidad User
 ### Obtener registros con filtro de búsqueda
 En el repositorio debe escribir la consulta
 
-```
+```java
 @Query("SELECT u FROM User u WHERE u.name = :name")
 List<User> findUsersByVehicleBrand(@Param("name") String name);
 ```
 
 Una consulta con 2 filtros se ve así
-```
+```java
 @Query("SELECT u FROM User u JOIN u.vehicleList v WHERE v.brand = :brand")
 List<User> findUsersByVehicleBrand(@Param("brand") String brand);
 ```
