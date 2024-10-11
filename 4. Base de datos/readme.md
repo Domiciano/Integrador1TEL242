@@ -257,7 +257,7 @@ En el repositorio debe escribir la consulta
 List<User> findUsersByVehicleBrand(@Param("name") String name);
 ```
 
-Una consulta con 2 filtros se ve así
+Una consulta a través de 2 tablas se ve así
 ```java
 @Query("SELECT u FROM User u JOIN u.vehicleList v WHERE v.brand = :brand")
 List<User> findUsersByVehicleBrand(@Param("brand") String brand);
