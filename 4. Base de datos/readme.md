@@ -124,9 +124,7 @@ Lo primero que debe saber es que Hibernate es el ORM lo que permite transformar 
 </dependency>
 ```
 El 60 representa la versión 6 de Hibernate.<br><br>
-
-Luego, puede usar el campo JSONB y lo debe desearializar como Map
-
+Luego, puede usar el campo JSONB y lo puede desearializar como Map o como List
 
 ```java
 @Entity
