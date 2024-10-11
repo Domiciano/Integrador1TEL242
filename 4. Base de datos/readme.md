@@ -26,7 +26,7 @@ volumes:
 ```
 
 Luego, use el comando
-```
+```sh
 docker-compose up -d
 ```
 
