@@ -38,7 +38,6 @@ Con esto tendrá una base de datos local en 127.0.0.1:3306. Su usuario es user, 
 services:
   db:
     platform: linux/x86_64
-    command: ["--max_connections=1000"]
     image: postgres:17
     restart: always
     environment:
