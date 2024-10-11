@@ -112,6 +112,161 @@ spring.datasource.driver-class-name=org.postgresql.Driver
 spring.datasource.url=jdbc:postgresql://localhost:5432/<DB>
 ```
 
+
+
+# 3. Relaciones de entidades en Springboot
+
+Usted puede especificar una tabla usando
+```
+import jakarta.persistence.*;
+
+@Entity
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    private String name;
+
+    private String email;
+
+    private String password;
+
+
+    //ToDo: Hacer Getters y Setters
+}
+```
+Donde @GeneratedValue(strategy = GenerationType.AUTO) se usa para indicar que la variable será INT y AUTO_INCREMENT
+
+# Relación 1 a Muchos
+Suponga que tiene una relación entre las entidades Curso y Profesor. Para configurar la relación usando JPA, las clases se verán así:
+
+```
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "profesor")
+public class Profesor {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private long id;
+
+    private String name;
+
+    @OneToMany(mappedBy = "profesor") //Nombre de la propiedad en la otra clase
+    private List<Curso> cursos;
+    
+    //ToDo: Hacer Getters y Setters
+}
+
+```
+Note que @OneToMany representa el 1 en el diagrama y @ManyToOne representa el *. Además @OneToMany en mappedBy se especifica el nombre del objeto de la clase relacionada, en @ManyToOne en su propiedad name se especifica el nombre del campo de la tabla donde se aloja la llave foránea
+```
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "curso")
+public class Curso {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private long id;
+
+    private String name;
+
+    private String program;
+
+    @ManyToOne
+    @JoinColumn(name = "profeID")
+    Profesor profesor;
+
+    //ToDo: Hacer Getters y Setters
+}
+```
+
+# 4. Componentes del Backend
+
+## Controller
+Esta capa está encargada de recibir las solicitudes del frontend. Aquí programará los GET, POST, PUT o DELETE.<br>
+Tenga en cuenta:<br>
+<ol>
+    <li>GET. Úselo cuando quiere consultar información a la base de datos</li>
+    <li>POST. Úselo cuando quiere agregar un nuevo registro a la base de datos</li>
+    <li>PUT. Úselo cuando quiere agregar/reemplazar/modificar un registro en la base de datos</li>
+    <li>DELETE. Úselo cuando quiere eliminar información de la base de datos</li>
+</ol>
+Un controller se ve así:
+
+```
+@RestController
+public class EchoController {
+
+    @Autowired
+    MyRepository myRepository;
+
+    @GetMapping("echo")
+    public String echo(){
+        return "echo";
+    }
+    
+    @PostMapping("another")
+    public ResponseEntity<?> another(){
+        return ResponseEntity.status(200).body("Another");
+    }
+
+}
+```
+
+## Repository
+En un repository, va el CRUD (Create, Read, Update, Delete) de cada una de las entidades. Por ejemplo si tenemos una entidad User, un repository puede verse así
+
+```
+public interface UserRepository extends CrudRepository<User, Long> {
+
+}
+``` 
+
+Donde <User, Long> el el tipo de dato de la entidad y el tipo de dato de la llave primaria de esa entidad. La interfaz por defecto tendrá los métodos save(User user), deleteById(Integer id), deleteAll(), findAll(), findById(), entre otros. 
+
+La clase repository es llamada por la clase controller donde se necesite usar.<br><br>
+
+Si requiere ordenamientos y paginación puede usar
+```java
+public interface UserRepository extends CrudRepository<User, Long> {
+
+}
+``` 
+## Acciones
+Todas las acciones y consultas se hacen por medio del repositorio.<br><br>
+
+### Obtener todos los registros de la tabla 
+```
+repository.findAll()
+```
+### Insertar datos
+```
+repository.save(user)
+```
+Donde user es una instancia de la entidad User
+
+### Obtener registros con filtro de búsqueda
+En el repositorio debe escribir la consulta
+
+```
+@Query("SELECT u FROM User u WHERE u.name = :name")
+List<User> findUsersByVehicleBrand(@Param("name") String name);
+```
+
+Una consulta con 2 filtros se ve así
+```
+@Query("SELECT u FROM User u JOIN u.vehicleList v WHERE v.brand = :brand")
+List<User> findUsersByVehicleBrand(@Param("brand") String brand);
+```
+
+
+# 5. Almacenar JSON en Postgres
+
 ## Almacenar JSONB como valor en Postgres
 
 Lo primero que debe saber es que Hibernate es el ORM lo que permite transformar registros de base de datos en objetos. Para que Hibernate pueda almacenar e interactuar con campos de este tipo debe primero usar la dependencia
@@ -124,7 +279,7 @@ Lo primero que debe saber es que Hibernate es el ORM lo que permite transformar 
 </dependency>
 ```
 El 60 representa la versión 6 de Hibernate.<br><br>
-Luego, puede usar el campo JSONB y lo puede desearializar como Map o como List
+Luego, puede usar el campo JSONB y lo puede desearializar como Map, como List o como el objeto que usted requiera. Pueden ser instancias de MiObjeto.
 
 ```java
 @Entity
@@ -142,11 +297,12 @@ public class User {
 
     @Type(JsonBinaryType.class)  // Usa el tipo JSONB de hibernate-types
     @Column(columnDefinition = "jsonb")
-    private Map<String, Object> data;
+    private MiObjeto data;
 
     //GETTERS Y SETTERS
 }
 ```
+
 
 
 
