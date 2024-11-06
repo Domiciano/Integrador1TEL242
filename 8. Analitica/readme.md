@@ -1,0 +1,14 @@
+Crear un entorno virtual de Python
+```
+python -m venv nombre_del_entorno
+```
+
+Activa el entorno virtual usando en Windows
+```
+nombre_del_entorno\Scripts\activate
+```
+
+O en Linux y MacOS
+```
+source nombre_del_entorno/bin/activate
+```
