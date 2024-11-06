@@ -17,3 +17,7 @@ Puedes extraer todas las depenciencias y sus versiones del proyecto usando
 ```
 pip freeze > requirements.txt
 ```
+Para correr el servicio de pyhton usando uvicorn
+```
+uvicorn main:app --reload
+```
