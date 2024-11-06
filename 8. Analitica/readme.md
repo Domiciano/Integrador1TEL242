@@ -12,3 +12,8 @@ O en Linux y MacOS
 ```
 source nombre_del_entorno/bin/activate
 ```
+
+Puedes extraer todas las depenciencias y sus versiones del proyecto usando
+```
+pip freeze > requirements.txt
+```
