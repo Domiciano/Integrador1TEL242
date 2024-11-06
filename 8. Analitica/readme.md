@@ -21,7 +21,7 @@ pip freeze > requirements.txt
 # FAST API
 
 A continuación está el hola mundo de esto
-```
+```python
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -42,14 +42,14 @@ def create_item(item: Item):
 ```
 
 Para path variables puede usar
-```
+```python
 @app.get("/items/{item_id}")
 def read_item(item_id: int):
     return {"item_id": item_id}
 ```
 
 Para query params, use
-```
+```python
 @app.get("/items/")
 def read_item(skip: int = 0, limit: int = 10):
     return {"skip": skip, "limit": limit}
