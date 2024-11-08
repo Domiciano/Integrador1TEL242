@@ -93,7 +93,7 @@ public class AppConfig {
 }
 ```
 Luego, puede usar algún método que haga el llamado. Por ejemplo un POST Request
-```
+```java
     public String httpRequest(String url, String body) throws IOException {
         HttpHeaders headers = new HttpHeaders();
         headers.set("Content-Type", "application/json; UTF-8");
