@@ -78,3 +78,35 @@ En el archivo de configuración se pueden cambiar parámetros estáticos del ser
 server.port=8081
 ```
 
+
+### HTTP Springboot Client
+Springboot también puede ser cliente de otro API si se requiere
+
+Para eso debe crear un archivo de configuración en un paquete config
+```java
+@Configuration
+public class AppConfig {
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+}
+```
+Luego, puede usar algún método que haga el llamado. Por ejemplo un POST Request
+```
+    public String httpRequest(String url, String body) throws IOException {
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Content-Type", "application/json; UTF-8");
+
+        HttpEntity<String> request = new HttpEntity<>(json, headers);
+        ResponseEntity<String> response = restTemplate.postForEntity(url, request, String.class);
+
+        if (response.getStatusCode() == HttpStatus.OK) {
+            return response.getBody();
+        } else {
+            throw new IOException("HTTP Error: " + response.getStatusCode() + ", " + response.getBody());
+        }
+    }
+```
+
+
