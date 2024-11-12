@@ -180,30 +180,6 @@ docker push domi0620/front:0.0.1
 
 
 
-## Próximamente
-
-
-
-```
-spring.datasource.url=jdbc:mysql://db:3306/db
-server.servlet.context-path=/bannerapi
-```
-
-```
-https://i2thub.icesi.edu.co:5443/bannerapi/echo
-```
-
-```
-spring.jpa.hibernate.ddl-auto=update
-spring.datasource.username=user
-spring.datasource.password=password
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-spring.datasource.tomcat.max-active=2
-spring.datasource.url=${DATA_SOURCE_URL}
-server.servlet.context-path=${APP_PATH}
-```
-
-
 
 ## 7. Desplegar a producción
 Para subir en un orquestador de contenedores como portainer se debe usar la configuración establecida por el administrador para poder hacer la publicación.
@@ -254,11 +230,3 @@ networks:
   proxy:
     external: true
 ```
-
-
-
-
-
-
-
-
