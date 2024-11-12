@@ -178,6 +178,13 @@ Ahora puede hacer push del stack para tener un backup online de su imagen. Esto 
 docker push domi0620/front:0.0.1          
 ```
 
+# Despliegue de proyectos de Python
+
+Primero en su proyecto, exporte la lista de dependencias requeridas para que el contenedor instale
+```
+pip freeze > requirements.txt
+```
+
 
 
 # Depliegue en el servidor de Icesi
