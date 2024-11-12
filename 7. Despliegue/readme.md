@@ -135,11 +135,11 @@ docker network inspect <NETWORK ID>
 Configuración del servidor nginx. Corresponde al archivo nginx.conf. Este archivo se deberá copiar al contenedor de NGINX
 ```
 server {
-    listen 80;
-    location /banner {
-        alias /usr/share/nginx/html;
-        index index.html;
-        try_files $uri $uri/ /banner/index.html;
+    listen 3000;
+    root /usr/share/nginx/html;
+    index index.html;
+    location / {
+        try_files $uri $uri/ =404;
     }
 }
 ```
@@ -152,7 +152,7 @@ FROM --platform=linux/amd64 nginx:latest
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY . /usr/share/nginx/html/
 # Exponer el puerto 80 para permitir el acceso a través de HTTP
-EXPOSE 80
+EXPOSE 3000
 ```
 
 ```
