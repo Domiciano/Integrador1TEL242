@@ -180,8 +180,9 @@ docker push domi0620/front:0.0.1
 
 
 
+# Depliegue en el servidor de Icesi
 
-## 7. Desplegar a producción
+## 1. Desplegar a producción
 Para subir en un orquestador de contenedores como portainer se debe usar la configuración establecida por el administrador para poder hacer la publicación.
 
 ```
