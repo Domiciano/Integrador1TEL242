@@ -132,7 +132,7 @@ docker network inspect <NETWORK ID>
 # Frontend
 
 ## 1. Preparación
-Configuración del servidor nginx. Corresponde al archivo nginx.conf
+Configuración del servidor nginx. Corresponde al archivo nginx.conf. Este archivo se deberá copiar al contenedor de NGINX
 ```
 server {
     listen 80;
