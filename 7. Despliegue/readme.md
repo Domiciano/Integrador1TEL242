@@ -129,62 +129,6 @@ docker network inspect <NETWORK ID>
 
 
 
-## 7. Desplegar a producción
-Para subir en un orquestador de contenedores como portainer se debe usar la configuración establecida por el administrador para poder hacer la publicación.
-
-```
-version: "3.7"
-services:
-  bannerdb:
-    command: ["--max_connections=1000"]
-    image: mysql:5.7
-    restart: always
-    environment:
-      MYSQL_DATABASE: 'db'
-      MYSQL_USER: 'user'
-      MYSQL_PASSWORD: 'password'
-      MYSQL_ROOT_PASSWORD: 'password'
-    volumes:
-      - bannerdata:/var/lib/mysql
-    networks:
-      - proxy
-
-  bannerbackend:
-    depends_on:
-      - bannerdb
-    image: domi0620/exampleapp:0.0.3
-    restart: always
-
-    environment:
-      - DATA_SOURCE_URL=jdbc:mysql://bannerdb:3306/db
-      - APP_PATH=/introtel
-    networks:
-      - proxy
-    deploy:
-        replicas: 1
-        labels: 
-          com.df.distribute: "false"
-          com.df.notify: "true"
-          com.df.port: 8080
-          com.df.servicePath: "/introtel"
-          
-
-
-volumes:
-  bannerdata:
-    external: true
-
-networks:
-  proxy:
-    external: true
-```
-
-
-
-
-
-
-
 # Frontend
 
 ## 1. Preparación
@@ -258,5 +202,63 @@ spring.datasource.tomcat.max-active=2
 spring.datasource.url=${DATA_SOURCE_URL}
 server.servlet.context-path=${APP_PATH}
 ```
+
+
+
+## 7. Desplegar a producción
+Para subir en un orquestador de contenedores como portainer se debe usar la configuración establecida por el administrador para poder hacer la publicación.
+
+```
+version: "3.7"
+services:
+  bannerdb:
+    command: ["--max_connections=1000"]
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    volumes:
+      - bannerdata:/var/lib/mysql
+    networks:
+      - proxy
+
+  bannerbackend:
+    depends_on:
+      - bannerdb
+    image: domi0620/exampleapp:0.0.3
+    restart: always
+
+    environment:
+      - DATA_SOURCE_URL=jdbc:mysql://bannerdb:3306/db
+      - APP_PATH=/introtel
+    networks:
+      - proxy
+    deploy:
+        replicas: 1
+        labels: 
+          com.df.distribute: "false"
+          com.df.notify: "true"
+          com.df.port: 8080
+          com.df.servicePath: "/introtel"
+          
+
+
+volumes:
+  bannerdata:
+    external: true
+
+networks:
+  proxy:
+    external: true
+```
+
+
+
+
+
+
 
 
