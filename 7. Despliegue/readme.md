@@ -184,7 +184,20 @@ Primero en su proyecto, exporte la lista de dependencias requeridas para que el 
 ```
 pip freeze > requirements.txt
 ```
-
+Puede usar un Dockerfile simular a
+```
+FROM python:3.10-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+EXPOSE 8000
+CMD ["uvicorn", "app.main:app", "--reload"]
+```
+Si requiere que no se copien archivos o carpetas como pycaché, cree un archivo llamado .dockerignore con el siguiente contenido
+```
+__pycache__/
+```
 
 
 # Depliegue en el servidor de Icesi
