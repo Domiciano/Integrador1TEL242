@@ -66,7 +66,7 @@ server.servlet.context-path=${APP_PATH}
 
 El llamado ${MI_VARIABLE} lo hace directamente el runtime y permite parametrizar configuraciones o constantes en los programas
 
-## 6. Primer Docker Compose
+## 6. Montaje de docker-compose
 En este docker compose sólo se va a hacer el montaje de la base de datos y del Rest API
 
 ```
