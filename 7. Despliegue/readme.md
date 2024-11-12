@@ -51,7 +51,7 @@ Ahora puede hacer push del stack para tener un backup online de su imagen. Esto 
 docker push domi0620/back:0.0.1 
 ```
 
-## 5. Usar variables de entorno
+## 6. Uso de la imagen en docker compose
 Puede ser conveniente usar variables de entorno en los proyecto para evitar que se realicen builds consecutivos.
 Por ejemplo, en el application.properties del backend puede usar variables de entorno
 ```
