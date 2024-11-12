@@ -184,20 +184,31 @@ Primero en su proyecto, exporte la lista de dependencias requeridas para que el 
 ```
 pip freeze > requirements.txt
 ```
-Puede usar un Dockerfile simular a
+Tenga un sistema de archivos similar a este
+```
+project/
+├── app/
+│   ├── main.py           # Archivo principal de FastAPI
+│   ├── requirements.txt  # Dependencias de Python
+└── Dockerfile            # Dockerfile para crear la imagen
+```
+
+Puede usar un Dockerfile similar a
 ```
 FROM python:3.10-slim
 WORKDIR /app
-COPY requirements.txt .
+COPY ./requirements.txt .
+RUN apt-get update -y && apt-get install -y gcc
 RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
+COPY ./app .
 EXPOSE 8000
-CMD ["uvicorn", "app.main:app", "--reload"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 ```
 Si requiere que no se copien archivos o carpetas como pycaché, cree un archivo llamado .dockerignore con el siguiente contenido
 ```
 __pycache__/
 ```
+
 
 
 # Depliegue en el servidor de Icesi
