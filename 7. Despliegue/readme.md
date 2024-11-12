@@ -1,4 +1,4 @@
-# Creación del contenedor de backend
+# Creación del contenedor de Springboot
 
 ## 1. Preparación
 Este comando le permitirá generar el JAR para ejecutar la aplicación
