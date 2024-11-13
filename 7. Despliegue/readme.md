@@ -208,6 +208,15 @@ Si requiere que no se copien archivos o carpetas como pycaché, cree un archivo 
 __pycache__/
 ```
 
+Cuando inserta variables de entorno, por ejemplo en un docker-compose.yml, puede usar la variable
+
+```
+import os
+...
+my_var = os.getenv("MY_VAR")
+
+```
+
 
 
 # Depliegue en el servidor de Icesi
