@@ -97,7 +97,7 @@ services:
     expose:
       - '8080'
     environment:
-      - DATA_SOURCE_URL=jdbc:mysql://bannerdb:3306/db
+      - DATA_SOURCE_URL=jdbc:postgresql://localhost:5432/db
       - APP_PATH=/bannerapi
     networks:
       - mired
