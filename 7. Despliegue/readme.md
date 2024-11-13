@@ -73,20 +73,19 @@ En este docker compose sólo se va a hacer el montaje de la base de datos y del 
 version: "3.7"
 services:
   bannerdb:
-    command: ["--max_connections=1000"]
-    image: mysql:5.7
+    platform: linux/x86_64
+    image: postgres:17
     restart: always
     environment:
-      MYSQL_DATABASE: 'db'
-      MYSQL_USER: 'user'
-      MYSQL_PASSWORD: 'password'
-      MYSQL_ROOT_PASSWORD: 'password'
-    volumes:
-      - bannerdata:/var/lib/mysql
+      POSTGRES_DB: 'db'
+      POSTGRES_USER: 'user'
+      POSTGRES_PASSWORD: 'password'
     ports:
-      - '3306:3306'
-    networks:
-      - mired
+      - '5432:5432'
+    expose:
+      - '5432'
+    volumes:
+      - my-db:/var/lib/postgresql/data
 
   bannerbackend:
     depends_on:
