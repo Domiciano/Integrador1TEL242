@@ -162,7 +162,7 @@ docker build -t front:0.0.1 .
 ## 3. Ejecutar imagen
 Para ejecutar la imagen en un contenedor use
 ```
-docker run -p 80:80 front:0.0.1
+docker run -p 3000:3000 front:0.0.1
 ```
 Esto generará un contenedor con nombre aleatorio que se ejecutará en el puerto 8080 y que está mapeado al puerto 8080 del contenedor.</br></br>
 
