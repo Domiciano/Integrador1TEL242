@@ -73,7 +73,7 @@ En este docker compose sólo se va a hacer el montaje de la base de datos y del 
 ```
 version: "3.7"
 services:
-  bannerdb:
+  db:
     platform: linux/x86_64
     image: postgres:17
     restart: always
@@ -86,25 +86,29 @@ services:
     expose:
       - '5432'
     volumes:
-      - my-db:/var/lib/postgresql/data
+      - projectdata:/var/lib/postgresql/data
+    networks:
+      - mired
 
-  bannerbackend:
+  backend:
     depends_on:
-      - bannerdb
-    image: domi0620/back:0.0.12
+      - db
+    image: domi0620/testapi:0.0.2
     restart: always
     ports:
       - '8080:8080'
     expose:
       - '8080'
     environment:
-      - DATA_SOURCE_URL=jdbc:postgresql://localhost:5432/db
-      - APP_PATH=/bannerapi
+      - DB_URL=jdbc:postgresql://db:5432/db
+      - APP_PATH=/introtelapi
+      - DB_USER=user
+      - DB_PASS=password
     networks:
       - mired
 
 volumes:
-  bannerdata:
+  projectdata:
   
 networks:
   mired:
