@@ -57,8 +57,8 @@ Por ejemplo, en el application.properties del backend puede usar variables de en
 ```
 spring.application.name=IntregradorAPI
 spring.jpa.hibernate.ddl-auto=update
-spring.datasource.username=user
-spring.datasource.password=password
+spring.datasource.username=${DB_USER}
+spring.datasource.password=${DB_PASS}
 spring.datasource.tomcat.max-active=10
 spring.datasource.driver-class-name=org.postgresql.Driver
 spring.datasource.url=${DB_URL}
