@@ -55,11 +55,12 @@ docker push domi0620/back:0.0.1
 Puede ser conveniente usar variables de entorno en los proyecto para evitar que se realicen builds consecutivos.
 Por ejemplo, en el application.properties del backend puede usar variables de entorno
 ```
+spring.application.name=IntregradorAPI
 spring.jpa.hibernate.ddl-auto=update
 spring.datasource.username=user
 spring.datasource.password=password
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-spring.datasource.tomcat.max-active=2
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.tomcat.max-active=10
 spring.datasource.url=${DATA_SOURCE_URL}
 server.servlet.context-path=${APP_PATH}
 ```
