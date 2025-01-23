@@ -131,7 +131,18 @@ docker network ls
 docker network inspect <NETWORK ID>
 ```
 
-
+Si quiere tener un administrador web para la base de datos, añada el servicio
+```
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: securepassword
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+```
 
 # Frontend
 
